@@ -26,6 +26,7 @@ public class Practice03OnDrawLayout extends LinearLayout {
 
     {
         // 在这里插入 setWillNotDraw(false) 以启用完整的绘制流程
+        setWillNotDraw(false);
     }
 
     @Override
@@ -58,8 +59,8 @@ public class Practice03OnDrawLayout extends LinearLayout {
         }
 
         private void draw(Canvas canvas) {
-            int repitition = (int) Math.ceil((float) getWidth() / getHeight());
-            for (int i = 0; i < spots.length * repitition; i++) {
+            int repetition = (int) Math.ceil((float) getWidth() / getHeight());
+            for (int i = 0; i < spots.length * repetition; i++) {
                 Practice03OnDrawLayout.Pattern.Spot spot = spots[i % spots.length];
                 canvas.drawCircle(i / spots.length * getHeight() * PATTERN_RATIO + spot.relativeX * getHeight(), spot.relativeY * getHeight(), spot.relativeSize * getHeight(), patternPaint);
             }
